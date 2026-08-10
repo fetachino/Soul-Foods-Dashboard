@@ -2,7 +2,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Dash](https://img.shields.io/badge/Dash-3.x-008DE5?logo=plotly&logoColor=white)](https://dash.plotly.com/)
-[![Tests](https://img.shields.io/badge/tests-3%20passed-success)](#testing)
+[![Tests](https://github.com/fetachino/Soul-Foods-Dashboard/actions/workflows/tests.yml/badge.svg)](https://github.com/fetachino/Soul-Foods-Dashboard/actions/workflows/tests.yml)
 
 An interactive sales analytics dashboard that transforms raw Soul Foods transaction
 data into a focused view of **Pink Morsel revenue by date and region**. The project
