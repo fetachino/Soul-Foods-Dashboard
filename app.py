@@ -24,6 +24,12 @@ app = Dash(__name__)
 server = app.server
 app.title = "Soul Foods Pink Morsel Sales"
 
+
+@server.get("/health")
+def health():
+    """Return a lightweight health response for deployment monitoring."""
+    return {"status": "ok"}
+
 app.layout = html.Main(
     className="dashboard",
     children=[

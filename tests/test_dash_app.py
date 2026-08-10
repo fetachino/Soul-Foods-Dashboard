@@ -3,6 +3,13 @@
 from app import REGIONS, app
 
 
+def test_health_endpoint_is_ready():
+    response = app.server.test_client().get("/health")
+
+    assert response.status_code == 200
+    assert response.get_json() == {"status": "ok"}
+
+
 def test_header_is_present(dash_duo):
     dash_duo.start_server(app)
     header = dash_duo.wait_for_element("#dashboard-header")

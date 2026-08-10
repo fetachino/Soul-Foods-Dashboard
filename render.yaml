@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: soul-foods-dashboard
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python data_processor.py
+    startCommand: waitress-serve --host=0.0.0.0 --port=$PORT app:server
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9

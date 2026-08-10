@@ -2,7 +2,9 @@
 
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Dash](https://img.shields.io/badge/Dash-3.x-008DE5?logo=plotly&logoColor=white)](https://dash.plotly.com/)
-[![Tests](https://img.shields.io/badge/tests-3%20passed-success)](#testing)
+[![Tests](https://github.com/fetachino/Soul-Foods-Dashboard/actions/workflows/tests.yml/badge.svg)](https://github.com/fetachino/Soul-Foods-Dashboard/actions/workflows/tests.yml)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/fetachino/Soul-Foods-Dashboard)
 
 An interactive sales analytics dashboard that transforms raw Soul Foods transaction
 data into a focused view of **Pink Morsel revenue by date and region**. The project
@@ -122,6 +124,19 @@ Open the local URL printed by Dash, typically <http://127.0.0.1:8050>.
 
 The application also regenerates the formatted dataset automatically if the output
 CSV is missing.
+
+## Deployment
+
+The included `render.yaml` provisions a free Render web service, rebuilds the formatted dataset,
+and serves Dash through Waitress. Click **Deploy to Render** above, connect GitHub if prompted, and
+confirm the blueprint. Render will monitor `/health` and provide the public application URL after
+the first successful deployment.
+
+The production command is:
+
+```bash
+waitress-serve --host=0.0.0.0 --port=$PORT app:server
+```
 
 ## Testing
 
